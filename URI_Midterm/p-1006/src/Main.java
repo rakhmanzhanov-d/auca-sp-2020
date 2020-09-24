@@ -5,6 +5,7 @@ public class Main {
         // reference type
         Scanner inp = new Scanner(System.in);
         // primitive pypes
+        // Place A B and C
         double A = inp.nextDouble();
         double B = inp.nextDouble();
         double C = inp.nextDouble();
