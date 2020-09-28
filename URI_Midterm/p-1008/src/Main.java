@@ -9,7 +9,7 @@ public class Main {
         double paymentPerHour = inp.nextDouble();
         double salary = hoursPerMonth * paymentPerHour;
 
-        System.out.println("NUMBER = " + number);
-        System.out.printf("SALARY = U$ %.2f",salary);
+        System.out.printf("NUMBER = %.0f\n",number);
+        System.out.printf("SALARY = U$ %.2f\n",salary);
     }
 }
