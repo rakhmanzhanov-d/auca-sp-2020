@@ -7,7 +7,7 @@ public class Main {
          int B = inp.nextInt();
          int C = inp.nextInt();
 
-
+// wrong answer
          if(A > B && A > C) {
              System.out.println(A + " eh o maior");
          }else if(B > A && B > C){
