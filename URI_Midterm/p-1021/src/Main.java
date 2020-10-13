@@ -33,7 +33,7 @@ public class Main {
         System.out.println(dec50 + " moeda(s) de R$ 0.50");
         System.out.println(dec25 + " moeda(s) de R$ 0.25");
         System.out.println(dec10 + " moeda(s) de R$ 0.10");
-        System.out.println(dec5 + " moeda(s) de R$ 0.5");
-        System.out.println(dec1 + " moeda(s) de R$ 0.1");
+        System.out.println(dec5 + " moeda(s) de R$ 0.05");
+        System.out.println(dec1 + " moeda(s) de R$ 0.01");
     }
 }
