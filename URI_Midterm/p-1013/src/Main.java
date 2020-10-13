@@ -8,12 +8,9 @@ public class Main {
          int C = inp.nextInt();
 
 // wrong answer
-         if(A > B && A > C) {
-             System.out.println(A + " eh o maior");
-         }else if(B > A && B > C){
-             System.out.println(B + " eh o maior");
-         }else if(C > A && C > B){
-             System.out.println(C + " eh o maior");
-         }
+         int AB = ( A + B + Math.abs(A - B)) / 2;
+         int ABC = (AB + C + Math.abs(AB - C)) / 2;
+
+         System.out.println(ABC + " eh o maior");
     }
 }
