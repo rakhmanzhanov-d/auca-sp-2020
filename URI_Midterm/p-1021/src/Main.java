@@ -5,6 +5,7 @@ public class Main {
         Scanner inp = new Scanner(System.in);
         float money = inp.nextFloat();
 
+        //True answer
         int d100 = (int) (money/100);
         int d50 = (int) (money - d100 * 100) / 50;
         int d20 = (int) (money - d100 * 100 - d50 * 50) / 20;
