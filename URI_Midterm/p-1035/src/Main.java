@@ -8,12 +8,12 @@ public class Main {
         int b = inp.nextInt();
         int c = inp.nextInt();
         int d = inp.nextInt();
+        int cd = c + d;
+        int ab = a + b;
 
-
-        if( b > c && d > a && (c + d) > (a + b) && c > 0 && d > 0 && (a / 2) == 0){
+        if( b > c && d > a && cd > ab && c > 0 && d > 0 && (a % 2) == 0){
             System.out.println("Valores aceitos");
-        }
-        System.out.println("Valores nao aceitos");
+        } else System.out.println("Valores nao aceitos");
 
     }
 }
