@@ -20,6 +20,8 @@ public class Problem08 {
             middle = B;
         }else if(C != minABC && C != maxABC){
             middle = C;
+
+            //Checking if A = B or B = C condition
         }else if(B == A && (B == maxABC || B == minABC)){
             middle = A;
         }else if(C == A && (C == maxABC || C == minABC)){
