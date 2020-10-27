@@ -4,7 +4,7 @@ public class Problem05 {
     public static void main(String[] args) {
         Scanner inp = new Scanner(System.in);
         // GRADES
-        String grade = "NP";
+        String grade = "Is not in the permitted range";
         System.out.print("Number of points?");
         int numGrade = inp.nextInt();
         if(numGrade >= 90 && numGrade <= 100){
