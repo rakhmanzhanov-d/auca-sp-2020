@@ -32,11 +32,7 @@ public class Problem05 {
                 System.out.println(30);
                 break;
             case 2:
-                if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
-                    System.out.println(29);
-                }else {
-                    System.out.println(28);
-                }
+                System.out.println(year % 4 == 0 && year % 100 != 0 || year % 400 == 0 ? 29 : 28);
                 break;
         }
     }
