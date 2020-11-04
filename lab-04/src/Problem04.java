@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Problem04 {
     public static void main(String[] args) {
         Scanner inp = new Scanner(System.in);
+        System.out.print("Complexity level? ");
         int level = inp.nextInt();;
         String gamer = "";
         if(level >= 4 && level <= 5){
