@@ -8,6 +8,7 @@ public class Main extends PApplet {
     float y;
     float dx;
     float dy;
+    String direcion = "RIGHT";
 
     public void settings() {
         fullScreen();
@@ -42,19 +43,28 @@ public class Main extends PApplet {
             if (keyCode == UP){
                 dx = 0;
                 dy = -D;
+                direcion = "UP";
             }else if(keyCode == RIGHT){
                 dx = D;
                 dy = 0;
+                direcion = "RIGHT";
             }else if(keyCode == DOWN){
                 dx = 0;
                 dy = D;
+                direcion = "DOWN";
             }else if(keyCode == LEFT){
                 dx = -D;
                 dy = 0;
+                direcion = "LEFT";
             }
+
         }
         x += dx;
         y += dy;
+        fill(255, 0, 0);
+        textSize(30);
+        textAlign(CENTER, CENTER);
+        text("You pressed button "+ direcion, width / 2f, 20);
     }
 
     public static void main(String[] args) {
