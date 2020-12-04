@@ -20,7 +20,7 @@ public class Main {
                     System.out.println("Alcool: " + alcohol);
                     System.out.println("Gasolina: " + gasoline);
                     System.out.println("Diesel: " + diesel);
-                    System.exit(1);
+                    System.exit(0);
                 }
             }
 
