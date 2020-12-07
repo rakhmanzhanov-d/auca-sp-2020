@@ -1,70 +1,100 @@
 import processing.core.*;
+
 import javax.swing.*;
 
 public class Main extends PApplet {
-    String strDiamter = JOptionPane.showInputDialog("Enter Diameter");
-    final float D = Integer.parseInt(strDiamter);
+    String strRectSz = JOptionPane.showInputDialog("Enter the field size [20, 40] ");
+    float D = Integer.parseInt(strRectSz);
+    float paddingX = 300, paddingY = 60;
     float x;
     float y;
     float dx;
     float dy;
-    String direcion = "RIGHT";
+    String direction;
 
     public void settings() {
         fullScreen();
-        size(1000, 1000);
     }
 
     public void setup() {
-        x = D / 2f;
-        y = D / 2f;
+        String direction = "RIGHT";
+        x = paddingX + D / 2f;
+        y = paddingY + D / 2f;
 
-        dx = D;
+        dx = 0;
         dy = 0;
+
+
         frameRate(20);
     }
 
     public void draw() {
-        fill(0, 0, 0, 30);
-        rect(0, 0, width - 1, height - 1);
+        if(D >= 40 || D <= 20){
+            JOptionPane.showInputDialog("Wrong number");
+            System.exit(0);
+        }
+        background(0, 0, 0);
+        //Drawing circle
         fill(255, 0, 0);
         circle(x, y, D);
 
-        for(float i = 0; i < height - 1; i += D){
-            line(0, i, width - 1, i);
+        // Drawing rectangles
+        for(float i = paddingX; i < width - paddingX; i += D){
+            line(i, paddingY,i, height - paddingY);
             stroke(3, 123, 252);
         }
-        for(float i = 0; i < width - 1; i += D){
-            line(i, 0, i, height - 1);
+        for(float i = paddingY; i < height - paddingY; i += D){
+            line(paddingX, i, width - paddingX, i);
             stroke(3, 123, 252);
         }
 
+        // keypress event  handling
         if(key == CODED){
             if (keyCode == UP){
+                direction = "UP";
                 dx = 0;
                 dy = -D;
-                direcion = "UP";
+                if (y <= paddingY + D / 2f){
+                    dx = 0;
+                    dy = 0;
+                }
             }else if(keyCode == RIGHT){
-                dx = D;
+                direction = "RIGHT";
                 dy = 0;
-                direcion = "RIGHT";
+                dx = D;
+                if (x >= width - paddingX - D / 2f){
+                    dx = 0;
+                    dy = 0;
+                }
             }else if(keyCode == DOWN){
+                direction = "DOWN";
                 dx = 0;
                 dy = D;
-                direcion = "DOWN";
+                if (y >= height - paddingY - D/2f){
+                    dx = 0;
+                    dy = 0;
+                }
             }else if(keyCode == LEFT){
-                dx = -D;
+                direction = "LEFT";
                 dy = 0;
-                direcion = "LEFT";
+                dx = -D;
+                if (x <= paddingX + D / 2f){
+                    dx = 0;
+                    dy = 0;
+                }
             }
-
         }
+
+
+
+        // Calling all results
         x += dx;
         y += dy;
         fill(255, 0, 0);
         textSize(30);
         textAlign(CENTER, CENTER);
-        text("You pressed button "+ direcion, width / 2f, 20);
+        text("You pressed button "+ direction, width / 2f, 20);
+
     }
 
     public static void main(String[] args) {
