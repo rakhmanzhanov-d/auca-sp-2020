@@ -3,7 +3,7 @@ import processing.core.*;
 import javax.swing.*;
 
 public class Main extends PApplet {
-    String c = JOptionPane.showInputDialog("Enter the number of circles");
+    String c = JOptionPane.showInputDialog("Enter the number of circles [1 20]");
     int circles = Integer.parseInt(c);
     float x, y;
     float dx, dy, r = 40, speed = 20;
@@ -33,13 +33,14 @@ public class Main extends PApplet {
         background(0, 0, 0);
 
         for (int i = 0; i < circles; i++) {
+            fill((255f / circles) * (i + 1), 0, 0);
             circle(arr[i][0], arr[i][1], r);
 
             if (arr[i][0] >= width || arr[i][0] < 0) {
                 arr[i][2] = -arr[i][2];
                 if (arr[i][0] >= width) {
                     arr[i][0] = width;
-                } else if (arr[i][0] < 0){
+                } else if (arr[i][0] < 0) {
                     arr[i][0] = 0;
                 }
             }
@@ -47,7 +48,7 @@ public class Main extends PApplet {
                 arr[i][3] = -arr[i][3];
                 if (arr[i][1] >= height) {
                     arr[i][1] = height;
-                } else if(arr[i][1] < 0){
+                } else if (arr[i][1] < 0) {
                     arr[i][1] = 0;
                 }
             }
